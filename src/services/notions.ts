@@ -52,12 +52,18 @@ export const getNotion = async (notionId: string) => {
 
 export const editNotion = async (notionId: string, title: string, src: string, description: string) => {
   const database = getDatabase()
+  const { currentUser } = getAuth()
+
+  if (!currentUser) {
+    throw new Error('Пользователь не найден')
+  }
 
   const notionIdRef = ref(database, `notions/${notionId}`)
   await set(notionIdRef, {
     src,
     title,
     description,
+    user: currentUser.uid,
   })
 }
 
@@ -76,7 +82,7 @@ export const createNotion = async () => {
 
   await Promise.all([
     set(newNotionRef, {
-      createdBy: currentUser.uid,
+      user: currentUser?.uid,
       src: '',
       title: '',
       description: '',

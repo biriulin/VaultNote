@@ -69,10 +69,6 @@ const NotionEdit: React.FC<NotionEditProps> = () => {
   const navigate = useNavigate()
   const { currentUser } = useAuth()
 
-  if (currentUser.uid !== notionState.data?.user) {
-    navigate('/')
-  }
-
   const [markdown, setMarkdown] = useState<string>('')
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
@@ -113,6 +109,10 @@ const NotionEdit: React.FC<NotionEditProps> = () => {
 
   if (!notionState.data) {
     return <h1>Заметка не найдена</h1>
+  }
+
+  if (currentUser.uid !== notionState.data?.user) {
+    navigate('/')
   }
 
   const editorState = () => $convertFromMarkdownString(notionState.data?.src || markdown, TRANSFORMERS)
