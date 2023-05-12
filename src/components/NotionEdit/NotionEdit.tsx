@@ -27,6 +27,8 @@ import ListMaxIndentLevelPlugin from './plugins/ListMaxIndentLevelPlugin'
 import ToolbarPlugin from './plugins/ToolbarPlugin'
 import ExampleTheme from './themes/ExampleTheme'
 
+import { useAuth } from '../../contexts/AuthContext'
+
 import { loadNotion } from '../../redux/notion/actions'
 import { NotionState } from '../../redux/notion/reducer'
 import { RootState } from '../../redux/store/store'
@@ -65,6 +67,11 @@ const NotionEdit: React.FC<NotionEditProps> = () => {
   const notionState: NotionState = useSelector((state: RootState) => state.notion)
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const { currentUser } = useAuth()
+
+  if (currentUser.uid !== notionState.data?.user) {
+    navigate('/')
+  }
 
   const [markdown, setMarkdown] = useState<string>('')
   const [title, setTitle] = useState<string>('')
