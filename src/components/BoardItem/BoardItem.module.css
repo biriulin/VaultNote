@@ -1,0 +1,14 @@
+.card {
+    max-height: 300px;
+    text-overflow: ellipsis;
+}
+
+.link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.buttons {
+    display:flex;
+    justify-content: space-between;
+}

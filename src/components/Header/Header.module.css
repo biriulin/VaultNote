@@ -1,0 +1,26 @@
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 80px;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.logoWrapper {
+    display:flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo {
+    height: 32px;
+}

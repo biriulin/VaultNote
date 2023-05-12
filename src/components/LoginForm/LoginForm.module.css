@@ -1,0 +1,17 @@
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 250px;
+}
+
+.inputFormWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.error {
+    color: brown;
+}

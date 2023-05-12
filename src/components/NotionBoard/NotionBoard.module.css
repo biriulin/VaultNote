@@ -1,0 +1,9 @@
+.heading {
+    display:flex;
+    gap: 30px;
+}
+
+.link {
+    color: inherit;
+    text-decoration: inherit;
+}
