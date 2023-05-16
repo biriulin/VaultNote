@@ -123,6 +123,7 @@ const NotionEdit: React.FC<NotionEditProps> = () => {
         <div className='editor-container'>
           <TextField
             id='outlined-basic'
+            name='title'
             label='Title'
             variant='outlined'
             className='input'
@@ -156,7 +157,7 @@ const NotionEdit: React.FC<NotionEditProps> = () => {
           </div>
         </div>
         <div className='save-button'>
-          <Button onClick={notionSave} variant='contained'>
+          <Button type='submit' onClick={notionSave} variant='contained'>
             Сохранить
           </Button>
         </div>

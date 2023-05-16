@@ -11,7 +11,7 @@ import { useAuth } from '../../contexts/AuthContext'
 type HeaderProps = {}
 
 const Header: React.FC<HeaderProps> = () => {
-  const { signout } = useAuth()
+  const { currentUser, signout } = useAuth()
 
   return (
     <div className={styles.header}>
@@ -21,14 +21,16 @@ const Header: React.FC<HeaderProps> = () => {
           <h1>VaultNote</h1>
         </div>
       </NavLink>
-      <Button
-        variant='outlined'
-        onClick={() => {
-          signout()
-        }}
-      >
-        Выйти
-      </Button>
+      {currentUser && (
+        <Button
+          variant='outlined'
+          onClick={() => {
+            signout()
+          }}
+        >
+          Выйти
+        </Button>
+      )}
     </div>
   )
 }

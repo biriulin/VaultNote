@@ -24,7 +24,7 @@ const App: React.FC<AppProps> = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/' element={withLogin(withHeader(<Notions />))} />
         <Route path='/:notion_id' element={withHeader(<NotionPage />)} />
-        <Route path='edit/:notion_id' element={withLogin(withHeader(<NotionEditPage />))} />
+        <Route path='/edit/:notion_id' element={withLogin(withHeader(<NotionEditPage />))} />
       </Routes>
     </Router>
   )

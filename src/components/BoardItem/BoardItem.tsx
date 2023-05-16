@@ -37,14 +37,14 @@ const BoardItem: React.FC<BoardItemProps> = ({ notion }) => {
               component='div'
               sx={{ textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}
             >
-              {notion.title}
+              {notion.title || 'Замтека'}
             </Typography>
             <Typography
               variant='body2'
               color='text.secondary'
               sx={{ textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}
             >
-              {notion.description}
+              {notion.description || 'Описание'}
             </Typography>
           </CardContent>
         </CardActionArea>

@@ -56,7 +56,7 @@ const LoginForm: React.FC<LoginFormProps> = () => {
     <div className={styles.inputFormWrapper}>
       <form className={styles.inputForm}>
         <h1>Вход</h1>
-        {error && <span className={styles.error}>{error}</span>}
+        {error && <span className={styles.error}>Логин или пароль введены неверно</span>}
         <TextField
           placeholder='login'
           onChange={(event) => {
