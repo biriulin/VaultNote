@@ -5,6 +5,7 @@ import { useAuth } from './contexts/AuthContext'
 
 import withHeader from './hoc/withHeader'
 import Login from './pages/Login'
+import NotFoundPage from './pages/NotFoundPage'
 import NotionEditPage from './pages/NotionEditPage'
 import NotionPage from './pages/NotionPage'
 import Notions from './pages/Notions'
@@ -25,6 +26,7 @@ const App: React.FC<AppProps> = () => {
         <Route path='/' element={withLogin(withHeader(<Notions />))} />
         <Route path='/:notion_id' element={withHeader(<NotionPage />)} />
         <Route path='/edit/:notion_id' element={withLogin(withHeader(<NotionEditPage />))} />
+        <Route path='/*' element={<NotFoundPage />} />
       </Routes>
     </Router>
   )
