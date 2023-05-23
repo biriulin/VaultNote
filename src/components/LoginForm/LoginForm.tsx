@@ -17,6 +17,7 @@ const LoginForm: React.FC<LoginFormProps> = () => {
   const { signup } = useAuth()
   const { signin } = useAuth()
   const navigate = useNavigate()
+  console.log(error)
 
   const handleSignup = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -56,7 +57,7 @@ const LoginForm: React.FC<LoginFormProps> = () => {
     <div className={styles.inputFormWrapper}>
       <form className={styles.inputForm}>
         <h1>Вход</h1>
-        {error && <span className={styles.error}>Логин или пароль введены неверно</span>}
+        {error && <span className={styles.error}>{error.split('.')[0].slice(10)}</span>}
         <TextField
           placeholder='login'
           onChange={(event) => {

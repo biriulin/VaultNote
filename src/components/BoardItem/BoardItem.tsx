@@ -37,7 +37,7 @@ const BoardItem: React.FC<BoardItemProps> = ({ notion }) => {
               component='div'
               sx={{ textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}
             >
-              {notion.title || 'Замтека'}
+              {notion.title || 'Заметка'}
             </Typography>
             <Typography
               variant='body2'
@@ -56,10 +56,10 @@ const BoardItem: React.FC<BoardItemProps> = ({ notion }) => {
             navigate(`/edit/${notion.id}`)
           }}
         >
-          Edit
+          Редактировать
         </Button>
         <Button size='small' onClick={onClickDeleteNotion}>
-          Delete
+          Удалить
         </Button>
       </CardActions>
     </Card>
